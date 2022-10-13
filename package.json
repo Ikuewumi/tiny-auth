@@ -1,0 +1,29 @@
+{
+   "name": "tiny-auth",
+   "version": "0.0.0",
+   "description": "A npm module to make authentication really easy",
+   "main": "index.js",
+   "scripts": {
+      "dev": "nodemon src/index.ts"
+   },
+   "keywords": [
+      "authentication",
+      "npm",
+      "node-module"
+   ],
+   "author": "Ayobami Ikuewumi",
+   "license": "ISC",
+   "dependencies": {
+      "bcrypt": "^5.1.0",
+      "config": "^3.3.8",
+      "jsonwebtoken": "^8.5.1"
+   },
+   "devDependencies": {
+      "@types/bcrypt": "^5.0.0",
+      "@types/jsonwebtoken": "^8.5.9",
+      "@types/mongoose": "^5.11.97",
+      "nodemon": "^2.0.20",
+      "ts-node": "^10.9.1",
+      "typescript": "^4.8.4"
+   }
+}
