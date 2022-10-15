@@ -10,6 +10,7 @@ export const getGlobalObject = (): Types.GlobalObject => {
 }
 
 /**
+ * Creates an error
  * @param message {string}
  */
 export const createError = (message: string) => {

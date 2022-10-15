@@ -1,5 +1,5 @@
 {
-   "name": "tiny-auth",
+   "name": "@ayobamsik/tiny-auth",
    "version": "0.0.0",
    "description": "A npm module to make authentication really easy",
    "main": "index.js",
@@ -21,6 +21,7 @@
    },
    "devDependencies": {
       "@types/bcrypt": "^5.0.0",
+      "@types/express": "^4.17.13",
       "@types/jsonwebtoken": "^8.5.9",
       "@types/mongoose": "^5.11.97",
       "nodemon": "^2.0.20",

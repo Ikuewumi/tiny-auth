@@ -1,11 +1,12 @@
 import { Document, Model } from "mongoose"
-import { TinyAuthInstance } from "./classes"
+import { AuthInstance } from "./classes"
+import { Request, Handler, NextFunction } from 'express'
 
 type GlobalBase = typeof globalThis
 
 export namespace Types {
    export interface GlobalObject extends GlobalBase {
-      tinyAuth?: TinyAuthInstance
+      tinyAuth?: AuthInstance
    }
 
    export type Keys = {
@@ -22,6 +23,16 @@ export namespace Types {
    }
 
    export type UserDocument = Document<unknown, any, Types.UserObj>
+
+   export interface UserRequest extends Request {
+      userDoc?: Types.UserDocument
+      user?: {
+         email: string
+         id: string
+      }
+   }
+
+   export type CustomHandler = (req: Types.UserRequest, res: Response, next: NextFunction) => any
 }
 
 export namespace Params {
@@ -32,6 +43,10 @@ export namespace Params {
    }
 
    export type EmailOrObject = string | Types.Obj
+
+   export interface RoleObject extends Types.Obj {
+      userRole: number
+   }
 }
 
 export namespace BluePrints {

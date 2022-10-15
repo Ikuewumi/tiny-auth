@@ -1,9 +1,9 @@
-import { TinyAuthInstance } from "./server/classes";
+import { AuthInstance } from "./server/classes";
 import { createError, getGlobalObject } from "./server/misc";
 import { Params } from "./server/types";
 
 /**
- * Creates a TinyAuthInstance
+ * Creates a AuthInstance
  * @param props {Params.Base} 
  * ### The Props Object  {
  * 
@@ -14,17 +14,17 @@ import { Params } from "./server/types";
  *    ```keys```: The environment variables to help encrypt and decrypt data as needed e.g. ```{ secretKey: XXXXXXXXX..... }```
  *
  * }
- * @returns {TinyAuthInstance} a TinyAuthInstance
+ * @returns {AuthInstance} a AuthInstance
  */
 const createAuthInstance = (props: Params.Base) => {
    const g = getGlobalObject()
-   g.tinyAuth = TinyAuthInstance.instance(props)
+   g.tinyAuth = AuthInstance.instance(props)
 
    return g.tinyAuth
 }
 
 /**
- * Returns the current TinyAuthInstance
+ * Returns the current AuthInstance
  * @param props {Params.Base} 
  * ### The Props Object  {
  * 
@@ -35,10 +35,10 @@ const createAuthInstance = (props: Params.Base) => {
  *    ```keys```: The environment variables to help encrypt and decrypt data as needed e.g. ```{ secretKey: XXXXXXXXX..... }```
  *
  * }
- * @returns {TinyAuthInstance} a TinyAuthInstance
+ * @returns {AuthInstance} a AuthInstance
  */
-const getAuthInstance = (): TinyAuthInstance => {
-   return TinyAuthInstance.instance()
+const getAuthInstance = (): AuthInstance => {
+   return AuthInstance.instance()
 }
 
 
